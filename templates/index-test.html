@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Internal CSS stylesheet-->
+        <link href="/static/styles.css" rel="stylesheet">
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <!--Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--Socket-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+       
+        <title>Flack - channel </title>
+        
+    </head>
+    <body>
+            <ul id="messages">
+            </ul>
+        
+           
+        <a href={{url_for('channel1') }}><button onclick="myFunction()" id="choose1">channel1</button></a>
+        <a href={{url_for('channel2') }}><button onclick="myFunction()" id="choose1">channel2</button></a>
+
+        <script type="text/javascript">
+              
+                var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+                socket.on('connect', () => {
+                    socket.send('User has connected');
+                });
+                // 'user has connectes' message
+                socket.on('message', msg => {
+                    const li = document.createElement('li');
+                    li.innerHTML = msg;
+                    document.querySelector("#messages").append(li);
+                });
+                // click event on button to send messages
+                document.querySelector("#sendbutton").onclick = () => {
+                    alert("click works");
+                    console.log("onclick works");
+                    const message = document.querySelector("#myMessage").value;
+                    socket.send(message);
+                    document.querySelector("#myMessage").value = '';
+                };
+                //join a channel
+                /*document.querySelectorAll('button').forEach(button => {
+                    button.onclick = () => {
+                        alert("every single button should fucking work");
+                        const room = button.innerHTML;
+                        socket.emit('join', room);
+                    };
+                });*/
+                function myFunction() {
+                    alert("every single button should fucking work");
+                    const room = document.querySelector('button').innerHTML;
+                    socket.emit('join', room);
+                }
+        </script> 
+
+    </body>
+</html>

@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Internal CSS stylesheet-->
+        <link href="/static/styles.css" rel="stylesheet">
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <!--Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--Socket-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            var socket = io();
+        </script>
+        <title>Flack - channel </title>
+        
+    </head>
+    <body>
+
+        <ul id="messages2">
+        </ul>
+
+        <input type="text" id="myMessage2">
+        <button id="sendbutton2">send</button>
+     
+    </body>
+</html>
