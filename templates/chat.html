@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Internal CSS stylesheet-->
+        <link href="/static/styles.css" rel="stylesheet">
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <!--Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--Socket-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            var socket = io();
+        </script>
+        <title>Flack - channel </title>
+        
+    </head>
+    <body>
+
+        <div class="page">
+            <a id="back-to-channels" href={{ url_for('channels') }}>Explore channels</a>
+            <hr>
+            <div class="hello-channel">
+                <p id="specific-channel">{{channel}}</p>
+            </div>
+
+            <ul id="messages" class="messages">
+               {% for message in messages_channel %}
+                    <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+       
+                <div class="message">
+                    <textarea id="message" name="message" type="text" autofocus></textarea>
+                    <input id="submit-message" type="submit" value="send">
+                </div>
+           
+        </div> 
+        <script type="text/javascript">
+
+            document.addEventListener('DOMContentLoaded', () => {
+                var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+                    const join_channel = document.querySelector("#specific-channel").innerHTML;
+                    socket.emit('join_channel', join_channel)
+                    // configure 'send' button to emit 'send message' event
+                    document.querySelector("#submit-message").onclick = () => {
+                        const message = document.querySelector("#message").value;
+                        const room = document.querySelector("#specific-channel").innerHTML;
+                        const name = localStorage.getItem("name");
+                        var date = new Date();
+                        date = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() +  
+                            ' ' + '|' + ' ' + date.getHours() + ":" + date.getMinutes();
+                        socket.emit('send message', {"message": message, "date": date, "room": room, "name": name});
+                    };
+              
+                    
+                    // when message is sent, add it to ul
+                    socket.on('display', whole_message => {
+                        const li = document.createElement('li');
+                        li.innerHTML = whole_message;
+                        document.querySelector("#messages").append(li);
+                        document.querySelector("#message").value = "";
+                        console.log(whole_message);
+                    });
+            });
+        </script>
+    </body>
+</html>

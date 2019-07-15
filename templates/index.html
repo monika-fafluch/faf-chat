@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Internal CSS stylesheet-->
+        <link href="/static/styles.css" rel="stylesheet">
+        <!--Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        
+        <title>Flack -  </title>
+        
+        
+    </head>
+    <body>
+        <div class="page">
+            <div class="flack">
+                <h1>f l a c k
+                </h1>
+            </div>
+            <div class="go-channels">
+                <a href={{ url_for('channels') }}>Go to channels</a>
+            </div>
+            <div class="name">
+                <form id="form" action="/" method="POST">
+                    <input id="name" type="text" name="name" autocomplete="off" autofocus placeholder="Create your username">
+                    <input id="create-channel" type="text" name="create-channel" autocomplete="off" autofocus placeholder="Create your channel">
+                    <input onclick="user_name()" id="submit-index" type="submit" value="next">
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript">
+
+                    function user_name() {
+                        const name = document.querySelector("#name").value;
+                        localStorage.setItem('name', name);
+                        alert(name);
+                    }
+            
+
+
+                /*// if a user was in a channel before, take them back to that same channel
+                var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+                if (localStorage.getItem("last channel")) {
+                    const room = localStorage.getItem("last channel");
+                    socket.emit('join', room);
+                }*/
+           
+
+
+        </script>
+    </body>
+</html>
+

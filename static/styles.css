@@ -1,0 +1,343 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.page                                                               /* index */
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: aqua;
+    width: 100%;
+    height: 100vh;
+    font-size: 16px;
+    background-image: linear-gradient(rgb(41, 40, 40), rgba(108, 158, 158, 0.851));
+}
+.flack
+{
+    position: relative;
+    bottom: 20%;
+}
+
+.flack h1
+{
+    font-family: 'Pacifico', cursive;
+    color: rgb(255, 255, 255);
+
+}
+form
+{
+    display: flex;
+    flex-direction: column;
+}
+input 
+{ 
+    font-size: inherit; 
+    font-family: inherit;
+}
+input:focus
+{
+    outline: none;
+}
+.name
+{
+    width: 70%;
+}
+.name input
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.name input[type=submit]
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    text-align: center;
+    background-color: rgb(226, 225, 225);
+    color: rgb(56, 56, 56);
+    margin-top: 20px;
+}
+.go-channels
+{
+    position: relative;
+    bottom: 10%;
+}
+.go-channels a
+{
+    text-decoration: none;
+    color: rgb(43, 44, 44);
+    font-size: 2em;
+    font-family: 'Lucida Sans';
+}
+
+/* Index page | Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px)
+{
+    .name
+    {
+        width: 30%;
+    }
+    .name input
+    {
+        font-size: 1.5em;
+    }
+    .flack h1
+    {
+        font-size: 2em;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px)
+{
+    .name
+    {
+        width: 40%;
+    }
+    .name input[type=submit], .name input[type=text]
+    {
+        height: 50px;
+        font-size: 1.5em;
+    }
+    .flack h1
+    {
+        font-size: 2.5em;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px)
+{
+    .name
+    {
+        width: 30%;
+    }
+}
+
+
+
+                                                                        /* create_channel page */
+
+.create-channel
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#hello-name
+{
+    font-family: 'Pacifico', cursive;
+    color: rgb(255, 255, 255);
+    position: relative;
+    bottom: 25%;
+}
+.create-channel-form h3
+{
+    color: rgb(255, 255, 255);
+    font-family: 'Indie Flower', sans-serif;
+    margin-bottom: 5%;
+}
+.go-channels
+{
+    position: relative;
+    bottom: 10%;
+}
+.create-channel input
+{
+    width: 90%;
+    height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 1em;
+}
+
+.create-channel button
+{
+    width: 90%;
+    height: 40px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(46, 46, 46);
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+}
+.go-channels a
+{
+    text-decoration: none;
+    color: rgb(43, 44, 44);
+    font-size: 2em;
+    font-family: 'Lucida Sans';
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px)
+{
+    #hello-name
+    {
+        font-size: 2em;
+    }
+    .create-channel-form h3, .create-channel input,  .create-channel button
+    {
+        font-size: 1.5em;
+    }
+
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px)
+{
+    #hello-name
+    {
+        font-size: 2.5em;
+    }
+    .create-channel-form h3
+    {
+        font-size: 2em;
+    }
+    .create-channel input, .create-channel button
+    {
+        font-size: 1.5em;
+    }
+
+}
+
+
+                                                                        /* channels page */
+
+.scroll
+{
+    background-color: rgb(250, 250, 250);
+    width: 80%;
+    height: 50vh;
+    border-radius: 50px;
+    overflow: scroll;
+
+} 
+#under-channels
+{
+    height: 20px;
+    background-color: rgb(249, 253, 253);
+    margin-top: 15px;
+    text-decoration: none;
+    color: rgb(39, 72, 64);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.scroll ul
+{
+    list-style: none;
+}    
+.all-channels li
+{
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: rgb(59, 59, 59);
+    margin: 10px 10px 15px 25px;
+
+}   
+.all-channels a
+{
+    text-decoration: none;
+}   
+.all-channels a:hover
+{
+    color: indigo;
+}   
+.page h1
+{
+    color: rgb(100, 99, 99);
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+}     
+
+
+
+                                                                    /* channel page */
+
+#back-to-channels
+{
+    text-decoration: none;
+    color: aliceblue;
+    margin-bottom: 40px;
+    font-size: 1.2em;
+}
+#channel-form
+{
+    width: 100%;
+}  
+hr
+{
+    width: 100%;
+    opacity: 0.25;
+}                                                                 
+.message
+{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.message textarea
+{
+    width: 80%;
+    height: 50px;
+    border: none;
+    font-size: 1em;
+}
+.message textarea:focus
+{
+    outline: none;
+}
+.message input
+{
+    
+    width: 20%;
+    height: 50px;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border: none;
+    background-color: rgb(59, 59, 59);
+    color: rgb(240, 240, 240);
+    font-family: 'Montserrat', sans-serif;
+}
+.hello-channel p
+{
+    font-family: 'Indie Flower', sans-serif;
+    font-size: 2em;
+    color: rgb(244, 247, 247);
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.messages
+{
+    width: 90%;
+    height: 70vh;
+    margin-bottom: 50px;
+    border-radius: 30px;
+    overflow: scroll;
+    background-color: rgb(245, 247, 247);
+}
+.messages li
+{
+    margin-top: 15px;
+    margin-left: 20px;
+    list-style: none;
+    font-size: 1em;
+    color: rgb(39, 44, 44);
+    font-family: "Montserrat", sans-serif;
+}
+
