@@ -20,8 +20,11 @@
     <body>
 
         <div class="page">
-            <a id="back-to-channels" href={{ url_for('channels') }}>Explore channels</a>
-            <hr>
+            <div class="nav-chat">
+                <h1></h1>
+                <button id="leave-channel">Leave the channel</button>
+            </div>
+          
             <div class="hello-channel">
                 <p id="specific-channel">{{channel}}</p>
             </div>
@@ -34,14 +37,17 @@
        
                 <div class="message">
                     <textarea id="message" name="message" type="text" autofocus></textarea>
-                    <input id="submit-message" type="submit" value="send">
+                    <input id="submit-message" type="submit" value="send" >
                 </div>
            
         </div> 
         <script type="text/javascript">
 
             document.addEventListener('DOMContentLoaded', () => {
-                var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+                    // send message with enter key - TO DO!!!
+                    
+
+                    var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
                     const join_channel = document.querySelector("#specific-channel").innerHTML;
                     socket.emit('join_channel', join_channel)
                     // configure 'send' button to emit 'send message' event
@@ -64,6 +70,14 @@
                         document.querySelector("#message").value = "";
                         console.log(whole_message);
                     });
+
+                    // emit leaving channel event when clicked on 'leave the channel' button
+                    document.querySelector("#leave-channel").onclick = () => {
+                        const channel = document.querySelector("#specific-channel").innerHTML;
+                        socket.emit('leave_channel', channel);
+                        // go back to the homepage
+                        window.location.href = "{{ url_for('drop_session') }}";
+                    }
             });
         </script>
     </body>

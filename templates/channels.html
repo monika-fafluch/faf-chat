@@ -3,6 +3,8 @@
     <head>
         <!--Internal CSS stylesheet-->
         <link href="/static/styles.css" rel="stylesheet">
+        <!--Internal CSS stylesheet for channels(scrollbar)-->
+        <link href="/static/styles-channel.css" rel="stylesheet">
         <!--Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Pacifico&display=swap" rel="stylesheet">
         <title>Flack - channels </title>
@@ -16,16 +18,22 @@
     </head>
     <body>
         <div class="page">
-            <h2 id="hello-name"></h2>
-            <h1>Explore channels</h1>
+            <div id="hello-name">
+            {% if name %}
+                <h1>Hello <em></em>{{name}}</em>, there are {{number}} channels to explore:</h1>
+            {% else %}
+                <h1>Hello!</h1>
+            {% endif %}
+            </div>
             <div class="scroll">
                 <ul class="all-channels" id="all-channels" data-all_channels="channels">
                     {% for channel in channels %}
-                        <a href={{ url_for('chat', channel=channel) }} class="join-channel"><li class="chosen-channel"><button>{{channel}}</button></li></a>
+                        <a href={{ url_for('chat', channel=channel) }} class="join-channel"><li class="chosen-channel"><button># {{channel}}</button></li></a>
                     {% endfor %}
                 </ul>
             </div>
-                <a id="under-channels" href={{ url_for('home') }}>Do you want to create your channel?</a>
+            <a id="under-channels" href={{ url_for('home') }}>Create your channel</a>
+                
         </div> 
         <script type="text/javascript">
                 // join the chosen channel

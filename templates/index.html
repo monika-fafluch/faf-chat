@@ -22,8 +22,8 @@
             </div>
             <div class="name">
                 <form id="form" action="/" method="POST">
-                    <input id="name" type="text" name="name" autocomplete="off" autofocus placeholder="Create your username">
-                    <input id="create-channel" type="text" name="create-channel" autocomplete="off" autofocus placeholder="Create your channel">
+                    <input id="name" type="text" name="name" autocomplete="off" autofocus placeholder="Create your username" required>
+                    <input id="create-channel" type="text" name="create-channel" autocomplete="off" placeholder="Create your channel">
                     <input onclick="user_name()" id="submit-index" type="submit" value="next">
                 </form>
             </div>
@@ -33,7 +33,6 @@
                     function user_name() {
                         const name = document.querySelector("#name").value;
                         localStorage.setItem('name', name);
-                        alert(name);
                     }
             
 
