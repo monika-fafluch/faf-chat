@@ -23,8 +23,9 @@
 
 .flack h1
 {
-    font-family: 'Pacifico', cursive;
-    color: rgb(255, 255, 255);
+    color: rgb(51, 54, 54);
+    font-size: 2em;
+    font-family: Helvetica, Arial, sans-serif;
 
 }
 form
@@ -43,12 +44,12 @@ input:focus
 }
 .name
 {
-    width: 70%;
+    width: 60%;
 }
 .name input
 {
     width: 100%;
-    height: 40px;
+    height: 30px;
     border-radius: 10px;
     border: none;
     font-size: 1em;
@@ -58,14 +59,17 @@ input:focus
 .name input[type=submit]
 {
     width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    border: none;
+    height: 30px;
     font-size: 1em;
     text-align: center;
-    background-color: rgb(226, 225, 225);
-    color: rgb(56, 56, 56);
-    margin-top: 20px;
+    background-color: rgb(59, 59, 59);
+    color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    cursor: pointer;
+    padding: 5px;
 }
 .go-channels
 {
@@ -76,9 +80,19 @@ input:focus
 {
     text-decoration: none;
     color: rgb(43, 44, 44);
-    font-size: 2em;
+    font-size: 1.3em;
     font-family: 'Lucida Sans';
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px)
+{
+    .go-channels a
+    {
+        font-size: 1.5em;
+    }
+}
+
 
 /* Index page | Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px)
@@ -124,114 +138,33 @@ input:focus
 
 
 
-                                                                        /* create_channel page */
-
-.create-channel
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#hello-name
-{
-    font-family: 'Pacifico', cursive;
-    color: rgb(255, 255, 255);
-    position: relative;
-    bottom: 25%;
-}
-.create-channel-form h3
-{
-    color: rgb(255, 255, 255);
-    font-family: 'Indie Flower', sans-serif;
-    margin-bottom: 5%;
-}
-.go-channels
-{
-    position: relative;
-    bottom: 10%;
-}
-.create-channel input
-{
-    width: 90%;
-    height: 40px;
-    margin: 10px;
-    border-radius: 10px;
-    border: none;
-    text-align: center;
-    font-size: 1em;
-}
-
-.create-channel button
-{
-    width: 90%;
-    height: 40px;
-    margin: 10px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(46, 46, 46);
-    border: none;
-    border-radius: 10px;
-    font-size: 1em;
-}
-.go-channels a
-{
-    text-decoration: none;
-    color: rgb(43, 44, 44);
-    font-size: 2em;
-    font-family: 'Lucida Sans';
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px)
-{
-    #hello-name
-    {
-        font-size: 2em;
-    }
-    .create-channel-form h3, .create-channel input,  .create-channel button
-    {
-        font-size: 1.5em;
-    }
-
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px)
-{
-    #hello-name
-    {
-        font-size: 2.5em;
-    }
-    .create-channel-form h3
-    {
-        font-size: 2em;
-    }
-    .create-channel input, .create-channel button
-    {
-        font-size: 1.5em;
-    }
-
-}
-
-
                                                                         /* channels page */
 
 .scroll
 {
-    background-color: rgb(250, 250, 250);
     width: 80%;
-    height: 50vh;
-    border-radius: 50px;
+    border-radius: 20px;
+    height: 70vh;
+    margin-bottom: 50px;
     overflow: scroll;
-
 } 
+
+
 #under-channels
 {
-    height: 20px;
-    background-color: rgb(249, 253, 253);
-    margin-top: 15px;
-    text-decoration: none;
-    color: rgb(39, 72, 64);
-    padding: 5px;
+    background-color: rgb(83, 83, 83);
+    color: rgb(240, 240, 240);
+    border: none;
     border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    width: 60%;
+    height: 30px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    text-align: center;
 }
 
 .scroll ul
@@ -241,7 +174,7 @@ input:focus
 .all-channels li
 {
     font-family: 'Indie Flower', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bolder;
     color: rgb(59, 59, 59);
     margin: 10px 10px 15px 25px;
@@ -251,20 +184,45 @@ input:focus
 {
     text-decoration: none;
 }   
-.all-channels a:hover
+
+.all-channels button
 {
-    color: indigo;
+    height: 40px;
+    width: 100%;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    color: rgb(228, 230, 229);
+} 
+.all-channels button:hover
+{
+    color: rgb(0, 102, 102);
+}
+
+#hello-name h1
+{
+    color: rgb(37, 37, 37);
+    font-size: 1em;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    padding: 15px;
+    text-align: center;
 }   
-.page h1
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px)
 {
-    color: rgb(100, 99, 99);
-    margin-bottom: 20px;
-    font-family: "Montserrat", sans-serif;
-}     
+    #hello-name h1
+    {
+        font-size: 1.5em;
+    }
+}
 
 
-
-                                                                    /* channel page */
+                                                                    /* chat page */
 
 #back-to-channels
 {
@@ -316,18 +274,18 @@ hr
 }
 .hello-channel p
 {
-    font-family: 'Indie Flower', sans-serif;
-    font-size: 2em;
-    color: rgb(244, 247, 247);
-    margin-bottom: 15px;
-    margin-top: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: rgb(222, 224, 224);
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .messages
 {
     width: 90%;
     height: 70vh;
-    margin-bottom: 50px;
-    border-radius: 30px;
+    margin-bottom: 70px;
+    border-radius: 15px;
     overflow: scroll;
     background-color: rgb(245, 247, 247);
 }
@@ -337,7 +295,85 @@ hr
     margin-left: 20px;
     list-style: none;
     font-size: 1em;
-    color: rgb(39, 44, 44);
-    font-family: "Montserrat", sans-serif;
+    color: rgb(45, 48, 48);
+    font-family: Helvetica, Arial, sans-serif;
 }
-
+.nav-chat
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav-chat h1
+{
+    color: rgb(100, 99, 99);
+    margin-bottom: 20px;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 7%;
+}
+.nav-chat button
+{
+    background-color: rgb(59, 59, 59);
+    color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 7%;
+    margin-bottom: 5%;
+    padding: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px)
+{
+    .messages
+    {
+        width: 70%;
+    }
+    .message input
+    {
+        width: 10%;
+    }
+    .message textarea
+    {
+        width: 90%;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px)
+{
+    .hello-channel p
+    {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+    .nav-chat button
+    {
+        margin-right: 7%;
+        margin-bottom: 3%;
+        font-size: 1em;
+        padding: 7px;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px)
+{
+    .hello-channel p
+    {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .nav-chat button
+    {
+        margin-right: 7%;
+        margin-bottom: 3%;
+        font-size: 1.3em;
+        padding: 10px;
+    }
+    .message input
+    {
+        font-size: 1.3em;
+    }
+}
