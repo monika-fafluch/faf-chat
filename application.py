@@ -9,7 +9,7 @@ import datetime
 
 
 app = Flask(__name__)
-app.secret_key = '\xd9\xcb\x91\x81$ho\x9fi\xaf[H\xb0\x7f\x0b\x88\xbc\xb8r0\x1e\x08@1'
+app.secret_key = 'SECRET'
 socketio = SocketIO(app)
 
 # Configure session to use filesystem
